@@ -6,6 +6,11 @@ const app = express();
 //Connect to Database
 connectDB();
 
+
+// Init Middleware
+//Allows us to accept body data
+app.use(express.json({ extended: false}))
+
 //making get request to our server 
 //.get() takes place, and arrow functiion with req and res and .json
 app.get('/', (req, res) => res.json({msg: 'Welcome to contact keeper api'}) );
